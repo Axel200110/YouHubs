@@ -19,6 +19,7 @@ function App() {
     try {
       const backendURL = process.env.REACT_APP_BACKEND_URL;
       const res = await axios.post(`${backendURL}/download`, { url, format });
+      console.log("Download response fileUrl:", res.data.fileUrl);
       setFileUrl(res.data.fileUrl);
       setMessage("✅ Download complete!");
     } catch (err) {
